@@ -15,8 +15,10 @@
     <string name="food_and_drinks">Food And Drinks</string>
     <string name="userName">Tên đăng nhập</string>
     <string name="pass">Mật Khẩu</string>
+    <string name="newpass">Mật Khẩu Mới</string>
     <string name="signup">Đăng Ký</string>
     <string name="login">Đăng Nhập</string>
+    <string name="createAccount">Create Account</string>
     <string name="forget">Quên mật Khẩu</string>
     <string name="phone">Số điện thoại</string>
     <string name="usersName">Tên đăng ký</string>
@@ -25,7 +27,7 @@
     <string name="changePass">Đổi mật khẩu</string>
     <string name="nhaplaimatkhau">Nhập lại mật khẩu</string>
     <string name="no">No</string>
-    <string name="yes">Yes</string>
+    <string name="yes">Lưu</string>
     <string name="baomat">Bảo mật</string>
     <string name="coffee">Coffee</string>
     <string name="nameCoffee">Coffee Latte</string>
@@ -41,10 +43,19 @@
     <string name="regular">Regular</string>
     <string name="medium">Medium</string>
     <string name="large">Large</string>
-<<<<<<< HEAD
-=======
+    <string name="photo_description">photo_description</string>
+
     <string name="signup1">Nếu bạn chưa có tài khoản vui lòng </string>
->>>>>>> truong
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_login">LoginActivity</string>
 
 
 </resources>

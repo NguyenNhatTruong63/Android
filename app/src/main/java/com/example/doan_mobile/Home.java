@@ -12,7 +12,7 @@ import androidx.viewpager.widget.ViewPager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Trangchu extends AppCompatActivity {
+public class Home extends AppCompatActivity {
     private ViewPager viewPager;
     private PhotoAdapter photoAdapter;
     @Override

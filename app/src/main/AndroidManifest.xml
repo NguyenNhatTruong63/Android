@@ -16,20 +16,20 @@
         android:theme="@style/Theme.Doan_mobile"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
             android:name=".Checkout"
             android:exported="false" />
         <activity
-            android:name=".Trangchu"
-=======
-            android:name=".Forget"
->>>>>>> truong
+            android:name=".Home"
             android:exported="false" />
         <activity
             android:name=".Baomat"
             android:exported="false" />
         <activity
-            android:name=".Main2Activity"
+            android:name=".Forget"
             android:exported="false" />
         <activity
             android:name=".Signup"

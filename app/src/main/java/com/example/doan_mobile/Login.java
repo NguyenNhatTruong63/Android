@@ -11,7 +11,8 @@ import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
     private Button button;
-    private TextView textView;
+    private TextView textView_forget;
+    private TextView textView_signup;
     private EditText editText;
 
     @Override
@@ -19,12 +20,27 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-//        textView = findViewById(R.id.title);
-        button = findViewById(R.id.signup);
-        button.setOnClickListener(new View.OnClickListener() {
+        textView_forget = findViewById(R.id.forget);
+        textView_signup = findViewById(R.id.signup);
+        button = findViewById(R.id.login);
+        textView_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this, Signup.class);
+                startActivity(intent);
+            }
+        });
+        textView_forget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, Forget.class);
+                startActivity(intent);
+            }
+        });
+       button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, Home.class);
                 startActivity(intent);
             }
         });
