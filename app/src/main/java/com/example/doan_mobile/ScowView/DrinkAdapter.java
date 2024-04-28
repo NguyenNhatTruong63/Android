@@ -23,7 +23,7 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkAdapter.DrinkViewHol
     @NonNull
     @Override
     public DrinkViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_trangchu, parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_scrow_view_layout, parent,false);
         return new DrinkViewHolder(view);
     }
 
@@ -35,7 +35,8 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkAdapter.DrinkViewHol
         }
         holder.image.setImageResource(drink.getImage());
         holder.name.setText(drink.getName());
-        
+        holder.price.setText(drink.getPrice());
+        holder.star.setImageResource(drink.getStar());
 
     }
 
@@ -57,10 +58,10 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkAdapter.DrinkViewHol
 
         public DrinkViewHolder(@NonNull View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.imageView3);
-            name = itemView.findViewById(R.id.textView);
-            price = itemView.findViewById(R.id.textView2);
-            star = itemView.findViewById(R.id.imageView8);
+            image = itemView.findViewById(R.id.imageView1);
+            name = itemView.findViewById(R.id.text_cdc);
+            price = itemView.findViewById(R.id.rp_view);
+            star = itemView.findViewById(R.id.start_view);
         }
     }
 }

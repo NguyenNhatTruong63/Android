@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--activity_scroww_view_layout-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="10dp"
     android:layout_marginEnd="10dp"
-    tools:context=".ScowView.ScrowViewLayout"
+    app:cardCornerRadius="6dp"
     android:orientation="vertical">
 
     <LinearLayout
@@ -17,21 +18,38 @@
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="149dp"
+            android:layout_gravity="center"
             android:scaleType="centerCrop"
             android:src="@drawable/c1" />
         <TextView
+            android:id="@+id/text_cdc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Coffee 1"
             android:textSize="20dp"
-            android:gravity="center"
-            android:padding="20dp">
+            android:text="Cofee"
+            android:gravity="start"
+            android:padding="20dp"/>
 
-        </TextView>
 
 
+        <TextView
+            android:id="@+id/rp_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rp: 20.000"
+            android:textAlignment="textEnd"
+            android:textSize="18dp"
+            android:padding="10dp"/>
+
+        <ImageView
+            android:id="@+id/start_view"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/star"
+            android:layout_gravity="end"
+            />
     </LinearLayout>
 
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

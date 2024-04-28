@@ -9,10 +9,11 @@ public class Drink {
     private int image;
     private String name;
     private int type;
-    private Double price;
+    private String price;
     private int star;
 
-    public Drink(int image, String name, int type, Double price, int star) {
+
+    public Drink(int image, String name, int type, String price, int star) {
         this.image = image;
         this.name = name;
         this.type = type;
@@ -44,11 +45,11 @@ public class Drink {
         this.type = type;
     }
 
-    public Double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
