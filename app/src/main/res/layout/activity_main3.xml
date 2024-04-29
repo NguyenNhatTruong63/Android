@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Baomat">
-
+    tools:context=".MainActivity3">
 
 
     <androidx.cardview.widget.CardView
@@ -13,7 +12,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="80dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="150dp"
         app:cardBackgroundColor="@color/white"
         >
         <ImageView
@@ -29,28 +28,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="180dp"
         android:text="@string/food_and_drinks"
         android:textStyle="bold"
         android:textSize="25sp"
         android:layout_marginBottom="30dp"
         android:textColor="@color/black" />
 
-    <TextView
-        android:id="@+id/baomat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/baomat"
-        android:textColor="@color/black"
-        android:layout_below="@+id/foodTitle"
-        android:layout_marginStart="30dp"
-        android:textSize="15sp"
-        android:textStyle="bold"
-
-        />
-
     <androidx.cardview.widget.CardView
-        android:id="@+id/soPhones"
+        android:id="@+id/user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -63,13 +49,13 @@
         android:layout_centerHorizontal="true"
         >
         <EditText
-            android:id="@+id/soPhone"
+            android:id="@+id/users"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:hint="@string/soPhone"
-            android:inputType="phone"
+            android:hint="@string/usersName"
+            android:inputType="text"
             />
     </androidx.cardview.widget.CardView>
 
@@ -80,7 +66,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         app:cardCornerRadius="20dp"
-        android:layout_below="@+id/soPhones"
+        android:layout_below="@+id/user"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         >
@@ -95,7 +81,7 @@
             />
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-        android:id="@+id/changePass"
+        android:id="@+id/phones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -108,65 +94,50 @@
         android:layout_centerHorizontal="true"
         >
         <EditText
-            android:id="@+id/changePassWord"
+            android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:hint="@string/changePass"
-            android:inputType="textPassword"
+            android:hint="@string/phone"
+            android:inputType="phone"
             />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/nhaplaipass"
+        android:id="@+id/Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         app:cardCornerRadius="20dp"
-        android:layout_below="@+id/changePass"
+        android:layout_below="@+id/phones"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         >
         <EditText
-            android:id="@+id/nhaplaiPass"
+            android:id="@+id/emails"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:hint="@string/nhaplaimatkhau"
-            android:inputType="textPassword"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
             />
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/yes"
+        android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nhaplaipass"
+        android:layout_below="@+id/Email"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="65dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="134dp"
         android:layout_marginBottom="30dp"
         android:backgroundTint="@color/gray"
         android:gravity="center_horizontal"
-        android:text="@string/yes"
-        android:textColor="@color/white"
-        android:textSize="16sp" />
-
-    <Button
-        android:id="@+id/no"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nhaplaipass"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="266dp"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="@color/gray"
-        android:gravity="center_horizontal"
-        android:text="@string/no"
+        android:text="@string/signup"
         android:textColor="@color/white"
         android:textSize="16sp" />
 
