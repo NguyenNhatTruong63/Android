@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="316dp"
+        android:layout_height="35dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/searchview_background"
+        android:queryHint="Tìm Kiếm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/notification_icon"
+        android:layout_width="42dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/notification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/chevron_icon"
+        android:layout_width="42dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/chevron_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/rectangle32"
+        android:layout_width="match_parent"
+        android:layout_height="404dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/banh_su_kem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView" />
+
+    <RelativeLayout
+        android:id="@+id/group29"
+        android:layout_width="413dp"
+        android:layout_height="82dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rectangle32">
+
+
+
+        <!-- 4.8 -->
+
+        <!-- Star Filled -->
+
+        <!-- Ratings and reviews -->
+
+        <TextView
+            android:id="@+id/ratingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="39dp"
+            android:layout_marginLeft="214dp"
+            android:layout_marginBottom="7dp"
+            android:text="4.8"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Chevron Right -->
+
+        <ImageView
+            android:id="@+id/starFilledIcon"
+            android:layout_width="35dp"
+            android:layout_height="13dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="13dp"
+            android:src="@drawable/star2_icon" />
+
+        <TextView
+            android:id="@+id/ratingsAndReviewsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="72dp"
+            android:layout_marginBottom="5dp"
+            android:text="Ratings and reviews"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Cake -->
+
+        <ImageView
+            android:id="@+id/chevronRightIcon"
+            android:layout_width="24dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="371dp"
+            android:layout_marginBottom="29dp"
+            android:src="@drawable/chevron_right" />
+
+        <ImageView
+            android:id="@+id/heartIcon"
+            android:layout_width="24dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="371dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/heart_icon" />
+
+        <TextView
+            android:id="@+id/cakeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="10dp"
+            android:text="Cake"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Bánh Sữa Kem -->
+        <TextView
+            android:id="@+id/banhSuKemText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="31dp"
+            android:text="Bánh Sữa Kem"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="430dp"
+            android:layout_height="333dp"
+            tools:ignore="MissingConstraints">
+
+            <!-- Rectangle 34 -->
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="422dp"
+        android:layout_height="315dp"
+        android:background="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="573dp">
+
+        <!-- Customize -->
+        <TextView
+            android:layout_width="77dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="6dp"
+            android:text="Customize"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Describe -->
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="106dp"
+            android:text="Describe"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Size -->
+        <TextView
+            android:layout_width="31dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="56dp"
+            android:text="Size"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Component 2 -->
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="151dp"
+            android:layout_marginTop="52dp">
+
+            <!-- Rectangle 12 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF">
+
+                <!-- Regular -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Regular"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!-- Component 3 -->
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="245dp"
+            android:layout_marginTop="51dp">
+
+            <!-- Rectangle 13 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF">
+
+                <!-- Medium -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Medium"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!-- Component 4 -->
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="343dp"
+            android:layout_marginTop="51dp">
+
+            <!-- Rectangle 14 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF">
+
+                <!-- Large -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Large"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/firstTextView"
+            android:layout_width="386dp"
+            android:layout_height="74dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="106dp"
+            android:text="Bọc ngoài là lớp vỏ bánh mỏng, bên trong đa dạng các loại nhân từ phô mai, chocolate, trà xanh,... Bạn có thể tận hưởng hương vị giòn tan, béo ngậy từ miếng đầu tiên.
+             Nhân bánh phô mai béo ngậy rất thích hợp với người thích ngọt và thích béo. Bánh nhân trà xanh thì thơm và có vị đắng nhẹ. Bạn có thể dễ dàng chọn loại nhân mình yêu thích để nếm thử."
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
