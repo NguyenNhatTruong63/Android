@@ -43,9 +43,9 @@
     <string name="regular">Regular</string>
     <string name="medium">Medium</string>
     <string name="large">Large</string>
+    <string name="order">Order</string>
     <string name="photo_description">photo_description</string>
 
-    <string name="signup1">Nếu bạn chưa có tài khoản vui lòng </string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
