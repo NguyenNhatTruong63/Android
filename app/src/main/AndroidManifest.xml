@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <!-- Include required permissions for Google Mobile Ads to run. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -28,13 +27,14 @@
             android:name="Login"
             android:exported="false"
             android:label="@string/title_activity_login" />
-            android:name=".ScowView.ScrowViewLayout"
-            android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="false"
             android:label="@string/title_activity_login"
             tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".chi_la_test_function"
+            android:exported="false" />
         <activity
             android:name=".Checkout"
             android:exported="false" />
@@ -47,18 +47,13 @@
         <activity
             android:name=".Signup"
             android:exported="false" />
-        <!--
-             You can find your app ID in the AdMob UI. For android:value,
-            insert your own AdMob app ID in quotes, as shown below.
-            Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713
-        -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />
 
         <activity
             android:name=".Main2Activity"
-            android:exported="false" /> <!-- Include the AdActivity configChanges and theme. -->
+            android:exported="false" />
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"

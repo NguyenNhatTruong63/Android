@@ -1,9 +1,11 @@
 package com.example.doan_mobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +30,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener  {
 
     private RecyclerView recyclerView;
     private Button Coffee, Drinks, Cake;
+    private ImageView home, bill, cart, person;
     GridLayoutManager gridLayoutManager;
 
     @Override
@@ -41,6 +44,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener  {
             return insets;
         });
         viewPager = findViewById(R.id.viewpager);
+        home = findViewById(R.id.imageView3);
 
         photoAdapter = new PhotoAdapter(this, getListPhoto());
         viewPager.setAdapter(photoAdapter);
@@ -63,6 +67,14 @@ public class Home extends AppCompatActivity implements View.OnClickListener  {
         Coffee.setOnClickListener(this);
         Drinks.setOnClickListener(this);
         Cake.setOnClickListener(this);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, chi_la_test_function.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private List<Drink> getList() {
