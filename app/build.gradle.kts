@@ -49,4 +49,7 @@ dependencies {
 
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation ("me.relex:circleindicator:2.1.6")
+
+    implementation ("androidx.sqlite:sqlite:2.1.0")
+    implementation ("androidx.sqlite:sqlite-framework:2.1.0")
 }

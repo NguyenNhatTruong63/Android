@@ -86,7 +86,7 @@
             <Button
                 android:id="@+id/add_order"
                 android:layout_width="121dp"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginStart="85dp"
                 android:backgroundTint="#00FFFFFF"
@@ -148,7 +148,7 @@
                 tools:layout_editor_absoluteY="423dp" />
             <Button
                 android:layout_width="121dp"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="130dp"
                 android:layout_marginStart="43dp"
                 android:backgroundTint="#00FFFFFF"
@@ -208,7 +208,7 @@
                 tools:layout_editor_absoluteY="423dp" />
             <Button
                 android:layout_width="121dp"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="210dp"
                 android:layout_marginStart="66dp"
                 android:backgroundTint="#00FFFFFF"
@@ -268,7 +268,7 @@
                 tools:layout_editor_absoluteY="423dp" />
             <Button
                 android:layout_width="121dp"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="290dp"
                 android:layout_marginStart="23dp"
                 android:backgroundTint="#00FFFFFF"
@@ -326,7 +326,7 @@
                 tools:layout_editor_absoluteY="423dp" />
             <Button
                 android:layout_width="121dp"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="370dp"
                 android:layout_marginStart="114dp"
                 android:backgroundTint="#00FFFFFF"
@@ -385,7 +385,7 @@
                 tools:layout_editor_absoluteY="423dp" />
             <Button
                 android:layout_width="121dp"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="450dp"
                 android:layout_marginStart="65dp"
                 android:backgroundTint="#00FFFFFF"
@@ -444,7 +444,7 @@
                 tools:layout_editor_absoluteY="423dp" />
             <Button
                 android:layout_width="121dp"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="530dp"
                 android:layout_marginStart="81dp"
                 android:backgroundTint="#00FFFFFF"
@@ -504,7 +504,7 @@
                 tools:layout_editor_absoluteY="423dp" />
             <Button
                 android:layout_width="121dp"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="610dp"
                 android:layout_marginStart="58dp"
                 android:backgroundTint="#00FFFFFF"
