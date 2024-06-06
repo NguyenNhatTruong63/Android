@@ -19,12 +19,6 @@
             android:name=".chi_la_test_function"
             android:exported="false" />
         <activity
-            android:name=".ScowView.ScrowViewLayout"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".ui.login.LoginActivity" -->
-        <!-- android:exported="false" -->
-        <!-- android:label="@string/title_activity_login" /> -->
-        <activity
             android:name=".Checkout"
             android:exported="false" />
         <activity
