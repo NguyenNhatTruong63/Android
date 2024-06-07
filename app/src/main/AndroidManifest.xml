@@ -42,6 +42,7 @@
             android:exported="false" />
         <activity
             android:name=".chi_la_test_function"
+
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".ui.login.LoginActivity" -->
         <!-- android:exported="false" -->
@@ -52,6 +53,17 @@
         <!-- <activity -->
         <!-- android:name=".Checkout" -->
         <!-- android:exported="false" /> -->
+            android:exported="false" />
+        <activity
+            android:name=".Cart"
+            android:exported="false" />
+        <activity
+            android:name=".ListProduct.CoffeeMocha"
+            android:exported="false" />
+        <activity
+            android:name=".ListProduct.CoffeeRobusta"
+            android:exported="false" />
+
         <activity
             android:name=".Baomat"
             android:exported="false" />
@@ -73,6 +85,7 @@
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:exported="false"
+
             android:theme="@android:style/Theme.Translucent" /> <!-- <activity -->
         <!-- android:name=".Home" -->
         <!-- android:exported="true"> -->
@@ -81,6 +94,9 @@
         <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
         <!-- </intent-filter> -->
         <!-- </activity> -->
+
+            android:theme="@android:style/Theme.Translucent" />
+
         <activity
             android:name=".Coffee"
             android:exported="true">
