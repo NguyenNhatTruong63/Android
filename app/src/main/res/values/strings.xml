@@ -56,6 +56,8 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="ADDTOCART">Add to cart</string>
+    <string name="delete">Delete</string>
 
 
 </resources>

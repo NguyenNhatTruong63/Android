@@ -18,8 +18,16 @@ import com.example.doan_mobile.R;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
-
     private List<Product> productList;
+    private OnItemClickListener onItemClickListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(Product product);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.onItemClickListener = listener;
+    }
 
     public ProductAdapter(List<Product> productList) {
         this.productList = productList;
@@ -35,16 +43,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product product = productList.get(position);
-        // Bind data to ViewHolder
-        holder.txtProductName.setText(product.getName());
-        holder.txtProductType.setText(product.getType());
-        holder.txtProductPrice.setText(String.valueOf(product.getPrice()));
-        // Load image using your preferred image loading library (e.g., Glide, Picasso)
-        // Example with Glide:
-        Glide.with(holder.itemView.getContext())
-                .load(product.getImage())
-                .placeholder(R.drawable.c1)
-                .into(holder.imgProductImage);
+        holder.bind(product, onItemClickListener);
     }
 
     @Override
@@ -52,16 +51,27 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return productList.size();
     }
 
-    static class ProductViewHolder extends RecyclerView.ViewHolder {
-        ImageView imgProductImage;
-        TextView txtProductName, txtProductType, txtProductPrice;
+    public static class ProductViewHolder extends RecyclerView.ViewHolder {
+        public ImageView productImage;
+        public TextView productName, productPrice;
 
-        ProductViewHolder(@NonNull View itemView) {
+        public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgProductImage = itemView.findViewById(R.id.product_image);
-            txtProductName = itemView.findViewById(R.id.product_name);
-            txtProductType = itemView.findViewById(R.id.product_type);
-            txtProductPrice = itemView.findViewById(R.id.product_price);
+            productImage = itemView.findViewById(R.id.product_image);
+            productName = itemView.findViewById(R.id.product_name);
+            productPrice = itemView.findViewById(R.id.product_price);
+        }
+
+        public void bind(final Product product, final OnItemClickListener listener) {
+            productImage.setImageResource(product.getImage());
+            productName.setText(product.getName());
+            productPrice.setText(String.valueOf(product.getPrice()));
+
+            itemView.setOnClickListener(v -> {
+                if (listener != null) {
+                    listener.onItemClick(product);
+                }
+            });
         }
     }
 }
