@@ -6,6 +6,7 @@ android {
     namespace = "com.example.doan_mobile"
     compileSdk = 34
 
+
     defaultConfig {
         applicationId = "com.example.doan_mobile"
         minSdk = 21
@@ -29,6 +30,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -52,4 +54,5 @@ dependencies {
 
     implementation ("androidx.sqlite:sqlite:2.1.0")
     implementation ("androidx.sqlite:sqlite-framework:2.1.0")
+
 }
