@@ -45,6 +45,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener  {
         });
         viewPager = findViewById(R.id.viewpager);
         home = findViewById(R.id.imageView3);
+        person = findViewById(R.id.imageView7);
 
         photoAdapter = new PhotoAdapter(this, getListPhoto());
         viewPager.setAdapter(photoAdapter);
@@ -72,6 +73,13 @@ public class Home extends AppCompatActivity implements View.OnClickListener  {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, chi_la_test_function.class);
+                startActivity(intent);
+            }
+        });
+        person.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, Account.class);
                 startActivity(intent);
             }
         });
