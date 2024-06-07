@@ -23,7 +23,7 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkAdapter.DrinkViewHol
     @NonNull
     @Override
     public DrinkViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_scrow_view_layout, parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_trangchu, parent,false);
         return new DrinkViewHolder(view);
     }
 

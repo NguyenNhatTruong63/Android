@@ -58,6 +58,7 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="ADDTOCART">Add to cart</string>
     <string name="delete">Delete</string>
+    <string name="checkout">Thanh toán</string>
 
 
 </resources>

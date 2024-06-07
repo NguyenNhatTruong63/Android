@@ -132,15 +132,11 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
-<<<<<<< HEAD
                 android:layout_height="400dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="30dp" />
-=======
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp" />
 
->>>>>>> 6590843833f252d3751553af3e189d0a6db4170b
+
 
             <LinearLayout
                 android:layout_width="match_parent"

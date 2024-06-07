@@ -34,7 +34,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     private PhotoAdapter photoAdapter;
 
     private Button Coffee, Drinks, Cake;
-    private ImageView home;
+    private ImageView home, person;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
