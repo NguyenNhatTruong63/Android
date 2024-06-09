@@ -26,7 +26,7 @@
     <string name="soPhone">Nhập số điện thoại</string>
     <string name="changePass">Đổi mật khẩu</string>
     <string name="nhaplaimatkhau">Nhập lại mật khẩu</string>
-    <string name="no">No</string>
+    <string name="no">Thoát</string>
     <string name="yes">Lưu</string>
     <string name="baomat">Bảo mật</string>
     <string name="coffee">Coffee</string>
@@ -44,6 +44,7 @@
     <string name="medium">Medium</string>
     <string name="large">Large</string>
     <string name="order">Order</string>
+    <string name="search">Tìm kiếm</string>
     <string name="photo_description">photo_description</string>
 
     <!-- Strings related to login -->

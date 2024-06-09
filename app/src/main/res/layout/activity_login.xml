@@ -17,19 +17,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="80dp"
-                android:layout_marginStart="50dp"
-                app:cardBackgroundColor="@color/white">
-                <ImageView
-                    android:id="@+id/imgLogo"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/foodandrink"
-                    android:contentDescription="@string/food_and_drinks" />
-            </androidx.cardview.widget.CardView>
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:cardCornerRadius="80dp"-->
+<!--                android:layout_marginStart="50dp"-->
+<!--                app:cardBackgroundColor="@color/white">-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/imgLogo"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:src="@drawable/foodandrink"-->
+<!--                    android:contentDescription="@string/food_and_drinks" />-->
+<!--            </androidx.cardview.widget.CardView>-->
             <TextView
                 android:id="@+id/foodTitle"
                 android:layout_width="wrap_content"

@@ -34,7 +34,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     private PhotoAdapter photoAdapter;
 
     private Button Coffee, Drinks, Cake;
-    private ImageView home, person;
+    private ImageView home, person, imageView6, accont;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,6 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
         productList = new ArrayList<>();
         dbHelper = new DatabaseProductHelper(this);
-
 
         // Lấy tất cả sản phẩm từ cơ sở dữ liệu
         productList = dbHelper.getAllProducts();
@@ -74,6 +73,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         viewPager = findViewById(R.id.viewpager);
         home = findViewById(R.id.imageView3);
         person = findViewById(R.id.imageView7);
+        accont = findViewById(R.id.imageView6);
 
         photoAdapter = new PhotoAdapter(this, getListPhoto());
         viewPager.setAdapter(photoAdapter);
@@ -87,10 +87,18 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         Cake.setOnClickListener(this);
 
         home.setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, chi_la_test_function.class);
+            Intent intent = new Intent(Home.this, Home.class);
             startActivity(intent);
         });
         person.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, Account.class);
+                startActivity(intent);
+            }
+        });
+
+        accont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, Account.class);
@@ -122,4 +130,5 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     private void ScrollToItem(int index) {
         // Implement scroll logic here
     }
+
 }
