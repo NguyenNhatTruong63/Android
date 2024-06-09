@@ -37,17 +37,12 @@
         <!-- Thêm các activity khác ở đây -->
         <activity
             android:name=".Login"
-<<<<<<< HEAD
             android:exported="false"/>
-        <activity
-            android:name=".Checkout"
-            android:exported="false" />
-        <activity
-            android:name=".chi_la_test_function"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".Checkout"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".Cart"
-=======
             android:exported="false"
             android:label="@string/title_activity_login"
             tools:ignore="DuplicateActivity" />
@@ -56,18 +51,16 @@
             android:exported="false" />
         <activity
             android:name=".cart.CartActivity"
->>>>>>> bdadfb6c573033a79dd7449ae21cc8b2927f07bf
             android:exported="false" />
         <activity
             android:name=".ProductDetailActivity"
             android:exported="false" />
+<!--        <activity-->
+
+<!--            android:name=".ListProduct.CoffeeLattee"-->
+<!--            android:exported="false" />-->
         <activity
-<<<<<<< HEAD
-            android:name=".ListProduct.CoffeeRobusta"
-            android:exported="false" />
-        <activity
-=======
->>>>>>> bdadfb6c573033a79dd7449ae21cc8b2927f07bf
+
             android:name=".Baomat"
             android:exported="false" />
         <activity
@@ -92,17 +85,13 @@
 
         <activity
             android:name=".Coffee"
-<<<<<<< HEAD
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-=======
             android:exported="false"/>
-
->>>>>>> bdadfb6c573033a79dd7449ae21cc8b2927f07bf
     </application>
 
 </manifest>

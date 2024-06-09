@@ -36,7 +36,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView home, person, imageView6, accont;
 
-    private ImageView home, history;
+//    private ImageView home, history;
 
 
     @Override
@@ -88,25 +88,24 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
             Intent intent = new Intent(Home.this, Home.class);
             startActivity(intent);
         });
-        person.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, Account.class);
-            Intent intent = new Intent(Home.this, Login.class);
-            startActivity(intent);
-        });
+//        person.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Home.this, Account.class);
+//                 startActivity(intent);
+//        });
 
-        history = findViewById(R.id.imageView4);
-        history.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, OrderHistoryActivity.class);
-
-                startActivity(intent);
-            }
-        });
-
-
+//        history = findViewById(R.id.imageView4);
+//        history.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Home.this, OrderHistoryActivity.class);
+//
+//                startActivity(intent);
+//            }
+//        });
+//
+//
         accont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,4 +144,3 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
 }
 
-    }
