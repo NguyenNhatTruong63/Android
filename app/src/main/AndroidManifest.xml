@@ -4,6 +4,8 @@
     <!-- Include required permissions for Google Mobile Ads to run. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -16,19 +18,16 @@
         android:theme="@style/Theme.Doan_mobile"
         tools:targetApi="31">
         <activity
-            android:name=".Cart"
+            android:name=".OrderHistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".ListProduct.CoffeeMocha"
+            android:name=".MapsActivity"
             android:exported="false" />
         <activity
-            android:name=".ListProduct.CoffeeRobusta"
+            android:name=".cart.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".chi_la_test_function"
-            android:exported="false" />
-        <activity
-            android:name=".Checkout"
+            android:name=".ProductDetailActivity"
             android:exported="false" />
         <activity
             android:name=".Baomat"
@@ -37,25 +36,16 @@
             android:name=".Forget"
             android:exported="false" />
         <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
             android:name=".Signup"
             android:exported="false" />
-        <!--
-             You can find your app ID in the AdMob UI. For android:value,
-            insert your own AdMob app ID in quotes, as shown below.
-            Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713
-        -->
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />
 
-        <activity
-            android:name=".ListProduct.CoffeeLattee"
-            android:exported="false" /> <!-- Include the AdActivity configChanges and theme. -->
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent" />
         <activity
             android:name=".Home"
             android:exported="true">

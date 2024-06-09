@@ -1,5 +1,6 @@
 package com.example.doan_mobile.Database;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -95,4 +96,5 @@ public class DatabaseProductHelper extends SQLiteOpenHelper {
         cursor.close();
         return productList;
     }
+
 }
