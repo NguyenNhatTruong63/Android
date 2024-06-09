@@ -10,6 +10,12 @@ public class Product {
     public Product() {
     }
 
+    public Product(String name, int image, double price) {
+        this.name = name;
+        this.image = image;
+        this.price = price;
+    }
+
     public Product(int id, String name, int image, String type, double price) {
         this.id = id;
         this.name = name;

@@ -17,7 +17,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.doan_mobile.Database.DatabaseProductHelper;
 import com.example.doan_mobile.Database.Product;
-import com.example.doan_mobile.ListProduct.CoffeeLattee;
 import com.example.doan_mobile.View.ProductAdapter;
 
 import java.util.ArrayList;
@@ -34,7 +33,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     private PhotoAdapter photoAdapter;
 
     private Button Coffee, Drinks, Cake;
+
     private ImageView home, person, imageView6, accont;
+
+    private ImageView home, history;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,12 +64,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         adapter = new ProductAdapter(productList);
         recyclerView.setAdapter(adapter);
 
-        adapter.setOnItemClickListener(product -> {
-            if (product.getName().equals("Coffee Latte")) {
-                Intent intent = new Intent(Home.this, CoffeeLattee.class);
-                startActivity(intent);
-            }
-        });
+
 
 //---------------------------------------------------------------------
 
@@ -94,9 +92,20 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, Account.class);
+            Intent intent = new Intent(Home.this, Login.class);
+            startActivity(intent);
+        });
+
+        history = findViewById(R.id.imageView4);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, OrderHistoryActivity.class);
+
                 startActivity(intent);
             }
         });
+
 
         accont.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,7 +114,9 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                 startActivity(intent);
             }
         });
+
     }
+
 
 
     private List<Photo> getListPhoto() {
@@ -131,4 +142,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         // Implement scroll logic here
     }
 
+
 }
+
+    }
