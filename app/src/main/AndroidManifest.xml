@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -32,23 +34,15 @@
             android:exported="false"
             android:label="@string/title_activity_login"
             tools:ignore="DuplicateActivity" />
-        <activity
-            android:name=".Checkout"
+                <activity
+            android:name=".MapsActivity"
             android:exported="false" />
         <activity
-            android:name=".chi_la_test_function"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".ui.login.LoginActivity" -->
-        <!-- android:exported="false" -->
-        <!-- android:label="@string/title_activity_login" /> -->
-<!--        <activity-->
-<!--            android:name=".Checkout"-->
-<!--            android:exported="false" />-->
-            android:name=".chi_la_test_function"
+            android:name=".cart.CartActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".Checkout"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".Baomat"
             android:exported="false" />
@@ -70,23 +64,11 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent" />
-<!--        <activity-->
-<!--            android:name=".Home"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
+
         <activity
             android:name=".Coffee"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

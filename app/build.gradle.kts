@@ -6,6 +6,7 @@ android {
     namespace = "com.example.doan_mobile"
     compileSdk = 34
 
+
     defaultConfig {
         applicationId = "com.example.doan_mobile"
         minSdk = 21
@@ -29,6 +30,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -43,6 +45,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
     implementation("androidx.annotation:annotation:1.6.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -52,4 +55,9 @@ dependencies {
 
     implementation ("androidx.sqlite:sqlite:2.1.0")
     implementation ("androidx.sqlite:sqlite-framework:2.1.0")
+
+    implementation ("com.google.android.gms:play-services-maps:18.0.0")
+    implementation ("com.google.android.gms:play-services-location:18.0.0")
+
+
 }
