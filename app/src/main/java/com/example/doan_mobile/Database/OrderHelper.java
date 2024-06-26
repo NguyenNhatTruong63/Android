@@ -13,25 +13,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderHelper extends SQLiteOpenHelper {
+    private static final String DATABASE_NAME = "orders";
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "orders.db";
+
     private static final String TABLE_ORDERS = "orders";
-    private static final String COLUMN_ID = "id";
+    private static final String COLUMN_ORDER_ID = "order_id";
+    private static final String COLUMN_CUSTOMER_NAME = "customer_name";
     private static final String COLUMN_PRODUCT_NAME = "product_name";
+    private static final String COLUMN_PRODUCT_IMAGE = "product_image";
     private static final String COLUMN_QUANTITY = "quantity";
     private static final String COLUMN_PRICE = "price";
+    private static final String COLUMN_ADDRESS = "address";
+
+    private SQLiteDatabase database;
 
     public OrderHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.database = getWritableDatabase();
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_ORDERS_TABLE = "CREATE TABLE " + TABLE_ORDERS + "("
-                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + COLUMN_ORDER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + COLUMN_CUSTOMER_NAME + " TEXT,"
                 + COLUMN_PRODUCT_NAME + " TEXT,"
+                + COLUMN_PRODUCT_IMAGE + " INTEGER,"
                 + COLUMN_QUANTITY + " INTEGER,"
-                + COLUMN_PRICE + " REAL" + ")";
+                + COLUMN_PRICE + " REAL,"
+                + COLUMN_ADDRESS + " TEXT" + ")";
         db.execSQL(CREATE_ORDERS_TABLE);
     }
 
@@ -41,47 +51,54 @@ public class OrderHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addOrder(CartItem item) {
-        SQLiteDatabase db = this.getWritableDatabase();
+    public void addOrder(CartItem item, String customerName, String address) {
         ContentValues values = new ContentValues();
+        values.put(COLUMN_CUSTOMER_NAME, customerName);
         values.put(COLUMN_PRODUCT_NAME, item.getProduct().getName());
+        values.put(COLUMN_PRODUCT_IMAGE, item.getProduct().getImage());
         values.put(COLUMN_QUANTITY, item.getQuantity());
         values.put(COLUMN_PRICE, item.getProduct().getPrice());
-        db.insert(TABLE_ORDERS, null, values);
-        db.close();
+        values.put(COLUMN_ADDRESS, address);
+
+        database.insert(TABLE_ORDERS, null, values);
     }
-    public List<Order> getAllOrders() {
-        List<Order> orderList = new ArrayList<>();
-        String selectQuery = "SELECT * FROM " + TABLE_ORDERS;
 
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
+    public List<Order> getOrderHistory(String customerName) {
+        List<Order> orders = new ArrayList<>();
+        Cursor cursor = database.query(TABLE_ORDERS, null, COLUMN_CUSTOMER_NAME + "=?", new String[]{customerName}, null, null, null);
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                Order order = new Order();
+                // Kiểm tra chỉ mục cột trước khi truy cập
+                int productNameIndex = cursor.getColumnIndex(COLUMN_PRODUCT_NAME);
+                if (productNameIndex != -1) {
+                    order.setProductName(cursor.getString(productNameIndex));
+                }
 
-        // Kiểm tra xem con trỏ có dữ liệu không
-        if (cursor != null && cursor.getCount() > 0) {
-            // Di chuyển con trỏ đến hàng đầu tiên
-            if (cursor.moveToFirst()) {
-                do {
-                    // Lấy giá trị từ các cột theo tên cột
-                    int orderId = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID)); // Lấy id
-                    String productName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PRODUCT_NAME)); // Lấy tên sản phẩm
-                    int quantity = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_QUANTITY)); // Lấy số lượng
-                    double price = cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_PRICE)); // Lấy giá
+                int productImageIndex = cursor.getColumnIndex(COLUMN_PRODUCT_IMAGE);
+                if (productImageIndex != -1) {
+                    order.setProductImage(cursor.getInt(productImageIndex));
+                }
 
-                    // Tạo đối tượng Order từ dữ liệu cột
-                    Order order = new Order(orderId, productName, quantity, price);
-                    // Thêm order vào danh sách
-                    orderList.add(order);
-                } while (cursor.moveToNext());
-            }
-        }
+                int priceIndex = cursor.getColumnIndex(COLUMN_PRICE);
+                if (priceIndex != -1) {
+                    order.setPrice(cursor.getDouble(priceIndex));
+                }
 
-        // Đóng kết nối và trả về danh sách đơn hàng
-        if (cursor != null) {
+                int quantityIndex = cursor.getColumnIndex(COLUMN_QUANTITY);
+                if (quantityIndex != -1) {
+                    order.setQuantity(cursor.getInt(quantityIndex));
+                }
+
+                int addressIndex = cursor.getColumnIndex(COLUMN_ADDRESS);
+                if (addressIndex != -1) {
+                    order.setAddress(cursor.getString(addressIndex));
+                }
+
+                orders.add(order);
+            } while (cursor.moveToNext());
             cursor.close();
         }
-        db.close();
-        return orderList;
+        return orders;
     }
-
 }

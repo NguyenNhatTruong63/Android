@@ -58,7 +58,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
         public void bind(Order order) {
             orderIdTextView.setText("Order ID: " + order.getOrderId());
-            orderNameTextView.setText("Order ID: " + order.getName());
+            orderNameTextView.setText("Order ID: " + order.getProductName());
             orderQuantityTextView.setText("Order ID: " + order.getQuantity());
             orderPriceTextView.setText("Order ID: " + order.getPrice());
 

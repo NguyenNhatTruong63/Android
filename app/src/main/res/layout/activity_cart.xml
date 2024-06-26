@@ -1,48 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+<!-- activity_order_form.xml -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
-    <!-- activity_cart.xml -->
+    android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/cart_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <TextView
-        android:id="@+id/total_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_gravity="end"
-        android:padding="8dp"
-        android:text="Total: $0.00" />
-
-    <!-- EditText để nhập địa chỉ -->
-    <EditText
-        android:id="@+id/addressEditText"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your address"
-        android:inputType="text"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <!-- Nút để mở Google Maps -->
-    <Button
-        android:id="@+id/openMapButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Find on Google Maps"
-        android:layout_marginTop="16dp"/>
+        <ImageView
+            android:id="@+id/backCheckout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_revert" />
 
-    <!-- Nút Checkout -->
-    <Button
-        android:id="@+id/btn_checkout_cart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Checkout"
-        android:layout_marginTop="16dp"/>
-</LinearLayout>
+        <!-- ListView để hiển thị các mặt hàng trong giỏ hàng -->
+        <ListView
+            android:id="@+id/cart_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Hiển thị tổng giá tiền của đơn hàng -->
+        <TextView
+            android:id="@+id/total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_gravity="end"
+            android:padding="8dp"
+            android:text="Total: $0.00" />
+
+        <!-- EditText để nhập địa chỉ -->
+        <EditText
+            android:id="@+id/addressEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Nhập địa chỉ của bạn"
+            android:inputType="text"/>
+
+        <!-- Nút Checkout để đặt hàng -->
+        <Button
+            android:id="@+id/btn_checkout_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đặt hàng"
+            android:layout_marginTop="16dp"/>
+        <Button
+            android:id="@+id/btn_back_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quay về trang chủ"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>

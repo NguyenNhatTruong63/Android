@@ -5,12 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SearchView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -18,55 +17,68 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.doan_mobile.Database.DatabaseProductHelper;
 import com.example.doan_mobile.Database.Product;
 import com.example.doan_mobile.View.ProductAdapter;
+import com.example.doan_mobile.cart.CartActivity;
+import com.example.doan_mobile.cart.UserSessionManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
+
     private RecyclerView recyclerView;
     private ProductAdapter adapter;
     private List<Product> productList;
     private DatabaseProductHelper dbHelper;
-    GridLayoutManager gridLayoutManager;
-
+    private GridLayoutManager gridLayoutManager;
     private ViewPager viewPager;
     private PhotoAdapter photoAdapter;
-
     private Button Coffee, Drinks, Cake;
-    private ImageView home, history;
+    private ImageView home, ViewCart, account,history;
+    //tiem kiem
+    private List<Product> filteredProductList;
+    private SearchView searchView;
+//dang nhap
+    private UserSessionManager session;
+    private TextView tvWelcome;
+    private Button btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_trangchu);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        ViewCart = findViewById(R.id.ViewCart);
+        ViewCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        history = findViewById(R.id.history);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, OrderHistoryActivity.class);
+                startActivity(intent);
+            }
         });
 
         recyclerView = findViewById(R.id.recycler_view);
         gridLayoutManager = new GridLayoutManager(this, 2); // 2 cột
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        productList = new ArrayList<>();
         dbHelper = new DatabaseProductHelper(this);
-
-        // Lấy tất cả sản phẩm từ cơ sở dữ liệu
         productList = dbHelper.getAllProducts();
+        filteredProductList = new ArrayList<>(productList);
 
-        // Thiết lập RecyclerView
-        adapter = new ProductAdapter(productList);
+        // Thay đổi cách khởi tạo adapter để truyền context
+        adapter = new ProductAdapter(this, filteredProductList);
         recyclerView.setAdapter(adapter);
 
 
-
-//---------------------------------------------------------------------
-
         viewPager = findViewById(R.id.viewpager);
-        home = findViewById(R.id.imageView3);
-
         photoAdapter = new PhotoAdapter(this, getListPhoto());
         viewPager.setAdapter(photoAdapter);
 
@@ -78,24 +90,50 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         Drinks.setOnClickListener(this);
         Cake.setOnClickListener(this);
 
+        home = findViewById(R.id.imageView3);
         home.setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, Login.class);
+            Intent intent = new Intent(Home.this, Home.class);
             startActivity(intent);
         });
 
-        history = findViewById(R.id.imageView4);
-        history.setOnClickListener(new View.OnClickListener() {
+
+        searchView = findViewById(R.id.search_view);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filter(newText);
+                return false;
+            }
+        });
+        account = findViewById(R.id.account);
+        account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Home.this, OrderHistoryActivity.class);
+                Intent intent = new Intent(Home.this, Account.class);
                 startActivity(intent);
             }
         });
-
-
     }
 
-
+    private void filter(String text) {
+        filteredProductList.clear();
+        if (text.isEmpty()) {
+            filteredProductList.addAll(productList);
+        } else {
+            for (Product product : productList) {
+                if (product.getName().toLowerCase().contains(text.toLowerCase())) {
+                    filteredProductList.add(product);
+                }
+            }
+        }
+        adapter.notifyDataSetChanged();
+    }
 
     private List<Photo> getListPhoto() {
         List<Photo> list = new ArrayList<>();
@@ -117,7 +155,6 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void ScrollToItem(int index) {
-        // Implement scroll logic here
+        recyclerView.smoothScrollToPosition(index);
     }
-
-    }
+}

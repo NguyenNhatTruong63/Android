@@ -2,6 +2,7 @@ package com.example.doan_mobile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -17,7 +18,7 @@ import com.example.doan_mobile.cart.Cart;
 import com.example.doan_mobile.cart.CartActivity;
 
 public class ProductDetailActivity extends AppCompatActivity {
-    private ImageView productImage;
+    private ImageView productImage, backDetail;
     private TextView productName, productPrice;
     private RadioGroup variantGroup, sugarGroup, milkGroup, iceGroup, sizeGroup;
     private Button btnAddToCart;
@@ -41,14 +42,14 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         // Nhận dữ liệu từ intent
         Intent intent = getIntent();
-        String name = intent.getStringExtra("PRODUCT_NAME");
-        int imageResId = intent.getIntExtra("PRODUCT_IMAGE", 0);
-        double price = intent.getDoubleExtra("PRODUCT_PRICE", 0.0);
+        Product product = (Product) intent.getSerializableExtra("product");
 
         // Thiết lập dữ liệu vào view
-        productName.setText(name);
-        Glide.with(this).load(imageResId).into(productImage);
-        productPrice.setText(String.format("$%.2f", price));
+        if (product != null) {
+            productName.setText(product.getName());
+            Glide.with(this).load(product.getImage()).into(productImage);
+            productPrice.setText(String.format("$%.2f", product.getPrice()));
+        }
 
         // Xử lý nút Add to Cart
         btnAddToCart.setOnClickListener(v -> {
@@ -59,23 +60,36 @@ public class ProductDetailActivity extends AppCompatActivity {
             int selectedIceId = iceGroup.getCheckedRadioButtonId();
             int selectedSizeId = sizeGroup.getCheckedRadioButtonId();
 
-            String selectedVariant = ((RadioButton) findViewById(selectedVariantId)).getText().toString();
-            String selectedSugar = ((RadioButton) findViewById(selectedSugarId)).getText().toString();
-            String selectedMilk = ((RadioButton) findViewById(selectedMilkId)).getText().toString();
-            String selectedIce = ((RadioButton) findViewById(selectedIceId)).getText().toString();
-            String selectedSize = ((RadioButton) findViewById(selectedSizeId)).getText().toString();
+            // Kiểm tra nếu tất cả các tùy chọn đều đã được chọn
+            if (selectedVariantId != -1 && selectedSugarId != -1 && selectedMilkId != -1 && selectedIceId != -1 && selectedSizeId != -1) {
+                String selectedVariant = ((RadioButton) findViewById(selectedVariantId)).getText().toString();
+                String selectedSugar = ((RadioButton) findViewById(selectedSugarId)).getText().toString();
+                String selectedMilk = ((RadioButton) findViewById(selectedMilkId)).getText().toString();
+                String selectedIce = ((RadioButton) findViewById(selectedIceId)).getText().toString();
+                String selectedSize = ((RadioButton) findViewById(selectedSizeId)).getText().toString();
 
-            // Tạo đối tượng Product và thêm vào giỏ hàng
-            Product product = new Product(name, imageResId, price);
-            Cart.getInstance().addToCart(product, 1); // Mặc định thêm 1 sản phẩm
+                // Thêm các thông tin tùy chọn vào sản phẩm trước khi thêm vào giỏ hàng
+                // ...
 
-            Toast.makeText(ProductDetailActivity.this, "Added to cart", Toast.LENGTH_SHORT).show();
+                // Thêm sản phẩm vào giỏ hàng
+                Cart.getInstance().addToCart(product, 1); // Mặc định thêm 1 sản phẩm
+
+                Toast.makeText(ProductDetailActivity.this, "Added to cart", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(ProductDetailActivity.this, "Please select all options", Toast.LENGTH_SHORT).show();
+            }
         });
 
         // Xử lý nút View Cart
         btnViewCart.setOnClickListener(v -> {
             Intent cartIntent = new Intent(ProductDetailActivity.this, CartActivity.class);
             startActivity(cartIntent);
+        });
+
+        backDetail = findViewById(R.id.backdetail);
+        backDetail.setOnClickListener(v -> {
+            Intent backIntent = new Intent(ProductDetailActivity.this, Home.class);
+            startActivity(backIntent);
         });
     }
 }

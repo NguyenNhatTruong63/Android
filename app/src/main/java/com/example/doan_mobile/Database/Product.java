@@ -1,6 +1,11 @@
 package com.example.doan_mobile.Database;
 
-public class Product {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private int id;
     private String name;
     private int image;
@@ -15,6 +20,7 @@ public class Product {
         this.image = image;
         this.price = price;
     }
+
 
     public Product(int id, String name, int image, String type, double price) {
         this.id = id;
@@ -81,4 +87,5 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
+
 }

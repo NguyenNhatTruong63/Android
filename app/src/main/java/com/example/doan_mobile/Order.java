@@ -2,19 +2,27 @@ package com.example.doan_mobile;
 
 public class Order {
     private int orderId;
-    private String name;
+    private String customerName;
+    private String productName;
+    private int productImage;
     private int quantity;
     private double price;
-    // Add more fields as needed
+    private String address;
 
-
-    public Order(int orderId, String name, int quantity, double price) {
-        this.orderId = orderId;
-        this.name = name;
-        this.quantity = quantity;
-        this.price = price;
+    public Order() {
     }
 
+    public Order(int orderId, String customerName, String productName, int productImage, int quantity, double price, String address) {
+        this.orderId = orderId;
+        this.customerName = customerName;
+        this.productName = productName;
+        this.productImage = productImage;
+        this.quantity = quantity;
+        this.price = price;
+        this.address = address;
+    }
+
+    // Getters and Setters
     public int getOrderId() {
         return orderId;
     }
@@ -23,12 +31,28 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public String getName() {
-        return name;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public int getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(int productImage) {
+        this.productImage = productImage;
     }
 
     public int getQuantity() {
@@ -45,5 +69,13 @@ public class Order {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

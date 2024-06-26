@@ -97,4 +97,69 @@ public class DatabaseProductHelper extends SQLiteOpenHelper {
         return productList;
     }
 
+    public List<Product> searchProductsByName(String productName) {
+        List<Product> productList = new ArrayList<>();
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Query để lấy các sản phẩm có tên chứa từ khoá productName
+        String query = "SELECT * FROM " + TABLE_PRODUCTS +
+                " WHERE " + COLUMN_NAME + " LIKE ?";
+        Cursor cursor = db.rawQuery(query, new String[]{"%" + productName + "%"});
+
+        if (cursor.moveToFirst()) {
+            do {
+                Product product = new Product();
+
+                // Check if the column exists before retrieving its index
+                int idIndex = cursor.getColumnIndex(COLUMN_ID);
+                if (idIndex != -1) {
+                    product.setId(cursor.getInt(idIndex));
+                } else {
+                    // Handle case where COLUMN_ID does not exist
+                    // You can log an error or take appropriate action
+                    continue; // Skip this iteration of the loop
+                }
+
+                int nameIndex = cursor.getColumnIndex(COLUMN_NAME);
+                if (nameIndex != -1) {
+                    product.setName(cursor.getString(nameIndex));
+                } else {
+                    // Handle case where COLUMN_NAME does not exist
+                    continue; // Skip this iteration of the loop
+                }
+
+                int imageIndex = cursor.getColumnIndex(COLUMN_IMAGE);
+                if (imageIndex != -1) {
+                    product.setImage(cursor.getInt(imageIndex));
+                } else {
+                    // Handle case where COLUMN_IMAGE does not exist
+                    continue; // Skip this iteration of the loop
+                }
+
+                int typeIndex = cursor.getColumnIndex(COLUMN_TYPE);
+                if (typeIndex != -1) {
+                    product.setType(cursor.getString(typeIndex));
+                } else {
+                    // Handle case where COLUMN_TYPE does not exist
+                    continue; // Skip this iteration of the loop
+                }
+
+                int priceIndex = cursor.getColumnIndex(COLUMN_PRICE);
+                if (priceIndex != -1) {
+                    product.setPrice(cursor.getDouble(priceIndex));
+                } else {
+                    // Handle case where COLUMN_PRICE does not exist
+                    continue; // Skip this iteration of the loop
+                }
+
+                productList.add(product);
+            } while (cursor.moveToNext());
+        }
+
+
+        cursor.close();
+        return productList;
+    }
+
+
 }

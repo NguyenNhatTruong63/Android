@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.doan_mobile.Database.DBUserHelper;
+import com.example.doan_mobile.cart.UserSessionManager;
 
 public class Login extends AppCompatActivity {
     private EditText editTextUsername;
@@ -18,6 +19,11 @@ public class Login extends AppCompatActivity {
     private Button buttonLogin;
     private TextView textViewForget;
     private TextView textViewSignup;
+
+    // duy tri dang nhap
+    private EditText etName;
+    private Button btnLogin;
+    private UserSessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +62,22 @@ public class Login extends AppCompatActivity {
                 // Chuyển sang màn hình đăng ký
                 Intent intent = new Intent(Login.this, Signup.class);
                 startActivity(intent);
+            }
+        });
+
+        session = new UserSessionManager(getApplicationContext());
+        etName = findViewById(R.id.users);
+        btnLogin = findViewById(R.id.login);
+
+        btnLogin.setOnClickListener(v -> {
+            String name = etName.getText().toString().trim();
+            if (!name.isEmpty()) {
+                session.createLoginSession(name);
+                Intent intent = new Intent(Login.this, Home.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(getApplicationContext(), "Please enter your name", Toast.LENGTH_SHORT).show();
             }
         });
     }

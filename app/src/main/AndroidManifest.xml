@@ -18,7 +18,19 @@
         android:theme="@style/Theme.Doan_mobile"
         tools:targetApi="31">
         <activity
+            android:name=".DetailCake"
+            android:exported="false" />
+        <activity
+            android:name=".DetailDrink"
+            android:exported="false" />
+        <activity
             android:name=".OrderHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Account"
+            android:exported="false" />
+        <activity
+            android:name=".SearchResultsActivity"
             android:exported="false" />
         <activity
             android:name=".MapsActivity"

@@ -4,6 +4,7 @@ import com.example.doan_mobile.Database.Product;
 
 public class CartItem {
     private Product product;
+    private String nameCustomer;
     private int quantity;
 
     public CartItem(Product product, int quantity) {

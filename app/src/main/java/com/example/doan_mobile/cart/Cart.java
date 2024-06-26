@@ -37,11 +37,16 @@ public class Cart {
     public List<CartItem> getItems() {
         return items;
     }
+
     public double getTotalPrice() {
         double total = 0.0;
         for (CartItem item : items) {
             total += item.getTotalPrice();
         }
         return total;
+    }
+
+    public void clearCart() {
+        items.clear();
     }
 }
